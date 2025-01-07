@@ -1,4 +1,4 @@
-package com.xofficial.todolist
+package com.xofficial.DhyanSe
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,7 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.xofficial.todolist.ui.theme.ToDoListTheme
+import com.xofficial.DhyanSe.ui.theme.ToDoListTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

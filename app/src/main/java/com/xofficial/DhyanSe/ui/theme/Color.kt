@@ -1,4 +1,4 @@
-package com.xofficial.todolist.ui.theme
+package com.xofficial.DhyanSe.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

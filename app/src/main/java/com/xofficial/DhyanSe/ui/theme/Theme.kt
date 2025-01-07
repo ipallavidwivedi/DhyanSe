@@ -1,4 +1,4 @@
-package com.xofficial.todolist.ui.theme
+package com.xofficial.DhyanSe.ui.theme
 
 import android.app.Activity
 import android.os.Build
