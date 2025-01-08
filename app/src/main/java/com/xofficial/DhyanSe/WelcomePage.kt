@@ -35,11 +35,11 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.Crossfade
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
-
+import androidx.navigation.NavController
 
 
 @Composable
-fun WelcomeScreen(){
+fun WelcomeScreen(navController: NavController){
     // State variable to track the current image
     val contentList  = listOf(
         CarouselContent(
@@ -64,12 +64,18 @@ fun WelcomeScreen(){
         Column(modifier = Modifier.fillMaxSize()
             .padding(top = 50.dp, start = 24.dp, end = 24.dp, bottom = 74.dp)
         ) {
-            Text(
-                text = "SKIP",
-                modifier = Modifier.align(Alignment.Start).alpha(0.5f),
-                color = Color(0xFFffffff)
-            )
+            // SKIP Button
+            TextButton(
+                onClick = { navController.navigate("login") },
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color.Transparent,
+                    contentColor = Color.White.copy(alpha = 0.5f)
+                )
+            ) {
+                Text(text = "SKIP", fontSize = 16.sp)
+            }
             Carousel(
+                navController = navController,
                 contentList = contentList,
                 currentIndex = currentIndex.value,
                 onNextClick = {
@@ -93,7 +99,8 @@ fun Carousel(
     contentList: List<CarouselContent>,
     currentIndex: Int,
     onNextClick: () -> Unit,
-    onBackClick: () -> Unit
+    onBackClick: () -> Unit,
+    navController: NavController
 ){
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
         // Image
@@ -157,7 +164,7 @@ fun Carousel(
                             contentColor = Color.White
                         )
                     ) {
-                        Text(text = "Next", fontSize = 16.sp)
+                        Text(text = "NEXT", fontSize = 16.sp)
                     }
                 }
                 contentList.size - 1 -> { // Last slide
@@ -174,12 +181,12 @@ fun Carousel(
                                 contentColor = Color.White.copy(alpha = 0.5f)
                             )
                         ) {
-                            Text(text = "Back", fontSize = 16.sp)
+                            Text(text = "BACK", fontSize = 16.sp)
                         }
                         Spacer(modifier = Modifier.width(16.dp))
                         // Get Started Button
                         OutlinedButton(
-                            onClick = { /* Navigate to next screen */ },
+                            onClick = {navController.navigate("login")},
                             shape = RoundedCornerShape(4.dp),
                             modifier = Modifier
                                 .weight(1f)
@@ -189,7 +196,7 @@ fun Carousel(
                                 contentColor = Color.White
                             )
                         ) {
-                            Text(text = "Get Started", fontSize = 16.sp)
+                            Text(text = "GET STARTED", fontSize = 16.sp)
                         }
                     }
                 }
@@ -207,7 +214,7 @@ fun Carousel(
                                 contentColor = Color.White.copy(alpha = 0.5f)
                             )
                         ) {
-                            Text(text = "Back", fontSize = 16.sp)
+                            Text(text = "BACK", fontSize = 16.sp)
                         }
                         Spacer(modifier = Modifier.width(16.dp))
                         // Next Button
@@ -222,7 +229,7 @@ fun Carousel(
                                 contentColor = Color.White
                             )
                         ) {
-                            Text(text = "Next", fontSize = 16.sp)
+                            Text(text = "NEXT", fontSize = 16.sp)
                         }
                     }
                 }
