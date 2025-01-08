@@ -28,8 +28,14 @@ class MainActivity : ComponentActivity() {
                 composable(route = "welcome"){
                     WelcomeScreen(navController)
                 }
+                composable(route = "authenticate"){
+                    AuthenticationScreen(navController)
+                }
                 composable(route = "login"){
                     LoginScreen()
+                }
+                composable(route = "register"){
+                    RegisterScreen()
                 }
 
             })

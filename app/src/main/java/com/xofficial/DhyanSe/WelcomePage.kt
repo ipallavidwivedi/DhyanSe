@@ -66,7 +66,7 @@ fun WelcomeScreen(navController: NavController){
         ) {
             // SKIP Button
             TextButton(
-                onClick = { navController.navigate("login") },
+                onClick = { navController.navigate("authenticate") },
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Transparent,
                     contentColor = Color.White.copy(alpha = 0.5f)
@@ -186,7 +186,7 @@ fun Carousel(
                         Spacer(modifier = Modifier.width(16.dp))
                         // Get Started Button
                         OutlinedButton(
-                            onClick = {navController.navigate("login")},
+                            onClick = {navController.navigate("authenticate")},
                             shape = RoundedCornerShape(4.dp),
                             modifier = Modifier
                                 .weight(1f)
